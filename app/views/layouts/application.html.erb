@@ -37,20 +37,6 @@
         </li>
       <% end %>
     </header>
-    <% if user_signed_in? %>
-      <div class="sidebar">
-        <%= form_with model: @book = Book.new,  url:books_path, mehtod: :post do |f| %>
-          <h4>New Book</h4>
-          <%= f.label :title %><br>
-          <%= f.text_field :title %>
-          <br>
-          <%= f.label :body, 'Opinion' %><br>
-          <%= f.text_field :body %>
-          <br>
-          <%= f.submit 'Create Book' %>
-        <% end %>
-      </div>
-    <% end %>
     <%= yield %>
   </body>
 </html>

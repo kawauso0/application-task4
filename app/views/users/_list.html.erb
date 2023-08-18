@@ -1,0 +1,23 @@
+<% if user_signed_in? %>
+  <div class="sidebar">
+    <div class="user">
+      <h2>User info</h2>
+      <%= image_tag  user.get_profile_image(100,100) %>
+      <p>name:<%= user.name %></p>
+      <p>introduction:<%= user.introduction %><p>
+      <span><%= link_to 'Edit', edit_user_path(user.id) %></span>
+    </div>
+    <div class="post">
+      <%= form_with model: @book = Book.new,  url:books_path, mehtod: :post do |f| %>
+        <h4>New Book</h4>
+        <%= f.label :title %><br>
+        <%= f.text_field :title %>
+        <br>
+        <%= f.label :body, 'Opinion' %><br>
+        <%= f.text_field :body %>
+        <br>
+        <%= f.submit 'Create Book' %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
