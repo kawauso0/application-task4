@@ -1,1 +1,29 @@
-<h1>Topページ</h1>
+<% if not flash[:notice] == nil %>
+    <div class="flash-message">
+    <%= flash[:notice] %>
+    </div>
+<% end %>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div>
+            <h2>welcome to <i class="fa-solid fa-book"></i>Bookers !!</h2>
+            <p>
+                In <i class="fa-solid fa-book"></i>Bookers,<br>
+                you can share and excange your opinions, impressions, and emotions<br>
+                about various books!
+            </p>
+            <div class="row justify-content-center">
+                <button type="button" class="btn btn-primary">
+                    <%= link_to 'Log in',  new_user_session_path, class: "text-light" %>
+                </button>
+            </div>
+            <div class="row justify-content-center">
+                <button type="button" class="btn btn-success">
+                    <%= link_to 'Sign up',  new_user_session_path, class: "text-light" %>
+                </button>
+            </div>
+            <br>
+            <p class="text-center">CopyRight Infratop.inc</p>
+        </div>
+    </div>
+</div>
